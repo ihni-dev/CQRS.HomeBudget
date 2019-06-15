@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+ARG BUILD_CONFIGURATION=Debug
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+EXPOSE 443
+
+WORKDIR /src
+COPY ["CQRS.HomeBudget.WebApi/CQRS.HomeBudget.WebApi.csproj", "CQRS.HomeBudget.WebApi/"]
+
+RUN dotnet restore "CQRS.HomeBudget.WebApi/CQRS.HomeBudget.WebApi.csproj"
+COPY . .
+WORKDIR "/src/CQRS.HomeBudget.WebApi"
+RUN dotnet build --no-restore "CQRS.HomeBudget.WebApi.csproj" -c $BUILD_CONFIGURATION
+
+RUN echo "exec dotnet run --no-build --no-launch-profile -c $BUILD_CONFIGURATION --" > /entrypoint.sh
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
