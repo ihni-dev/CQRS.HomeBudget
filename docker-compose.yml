@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  cqrs.homebudget.webapi:
+    image: ${DOCKER_REGISTRY-}cqrshomebudgetwebapi
+    build:
+      context: .
+      dockerfile: CQRS.HomeBudget.WebApi/Dockerfile
