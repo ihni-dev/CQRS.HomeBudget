@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}cqrshomebudgetwebapi
     build:
       context: .
-      dockerfile: CQRS.HomeBudget.WebApi/Dockerfile
+      dockerfile: src/CQRS.HomeBudget.WebApi/Dockerfile

@@ -1,9 +1,8 @@
-﻿using System;
-using Autofac.Extensions.DependencyInjection;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Serilog;
 using Serilog.Events;
+using System;
 
 namespace CQRS.HomeBudget.WebApi
 {
@@ -40,7 +39,6 @@ namespace CQRS.HomeBudget.WebApi
 
         private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .ConfigureServices(services => services.AddAutofac())
                 .UseStartup<Startup>()
                 .UseSerilog();
     }

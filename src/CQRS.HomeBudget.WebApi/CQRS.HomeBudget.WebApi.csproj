@@ -25,4 +25,8 @@
     <PackageReference Include="Serilog.Sinks.Http" Version="5.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CQRS.HomeBudget.CompositionRoot\CQRS.HomeBudget.CompositionRoot.csproj" />
+  </ItemGroup>
+
 </Project>
