@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+    <PackageReference Include="EventFlow" Version="0.73.3933" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AutofacModules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CQRS.HomeBudget.Application\CQRS.HomeBudget.Application.csproj" />
+    <ProjectReference Include="..\CQRS.HomeBudget.Domain\CQRS.HomeBudget.Domain.csproj" />
+    <ProjectReference Include="..\CQRS.HomeBudget.ReadModels\CQRS.HomeBudget.ReadModels.csproj" />
+  </ItemGroup>
+
+</Project>
