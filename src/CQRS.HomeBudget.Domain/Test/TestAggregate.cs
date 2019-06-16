@@ -5,7 +5,7 @@ namespace CQRS.HomeBudget.Domain.Test
 {
     public class TestAggregate : AggregateRoot<TestAggregate, TestAggregateId>, IEmit<TestCreated>
     {
-        protected TestAggregate(TestAggregateId id) : base(id)
+        public TestAggregate(TestAggregateId id) : base(id)
         {
         }
 

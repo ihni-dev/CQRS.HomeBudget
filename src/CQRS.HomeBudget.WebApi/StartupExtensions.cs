@@ -15,9 +15,9 @@ namespace CQRS.HomeBudget.WebApi
         {
             EventFlowOptions.New
                 .UseAutofacContainerBuilder(containerBuilder)
-                .AddAspNetCore()
                 .RegisterModules()
-                .UseFilesEventStore(FilesEventStoreConfiguration.Create("./evt-store"));
+                .UseFilesEventStore(FilesEventStoreConfiguration.Create("./evt-store"))
+                .UseConsoleLog();
         }
     }
 }
