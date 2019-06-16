@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CQRS.HomeBudget.CompositionRoot;
+using EventFlow.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,14 @@ namespace CQRS.HomeBudget.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            return ConfigureContainer(services);
+            var containerBuilder = new ContainerBuilder();
+
+            services.AddEventFlow(options => options.ConfigureEventFlow(Configuration, containerBuilder));
+
+            containerBuilder.Populate(services);
+            containerBuilder.RegisterModules();
+
+            return new AutofacServiceProvider(containerBuilder.Build());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -39,17 +47,6 @@ namespace CQRS.HomeBudget.WebApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
-        }
-
-        private IServiceProvider ConfigureContainer(IServiceCollection services)
-        {
-            var containerBuilder = new ContainerBuilder();
-
-            Configuration.ConfigureEventFlow(containerBuilder);
-            containerBuilder.Populate(services);
-            containerBuilder.RegisterModules();
-
-            return new AutofacServiceProvider(containerBuilder.Build());
         }
     }
 }

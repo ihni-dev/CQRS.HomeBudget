@@ -11,10 +11,22 @@ namespace CQRS.HomeBudget.WebApi
 {
     internal static class StartupExtensions
     {
-        internal static void ConfigureEventFlow(this IConfiguration configuration, ContainerBuilder containerBuilder)
+        internal static void ConfigureEventFlow(this IEventFlowOptions eventFlowOptions,
+            IConfiguration configuration,
+            ContainerBuilder containerBuilder)
         {
-            EventFlowOptions.New
+            eventFlowOptions
                 .UseAutofacContainerBuilder(containerBuilder)
+                .AddAspNetCore(c => c
+                    .RunBootstrapperOnHostStartup()
+                    .UseMvcJsonOptions()
+                    .UseModelBinding()
+                    .AddUserClaimsMetadata()
+                    .UseLogging()
+                    .AddMetadataProviders()
+                    .UseModelBinding()
+                    .AddUriMetadata()
+                    .AddRequestHeadersMetadata())
                 .RegisterModules()
                 .UseFilesEventStore(FilesEventStoreConfiguration.Create("./evt-store"))
                 .UseConsoleLog();

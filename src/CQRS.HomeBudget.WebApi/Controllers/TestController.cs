@@ -1,11 +1,10 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using CQRS.HomeBudget.Application.Test.Commands;
+﻿using CQRS.HomeBudget.Application.Test.Commands;
 using CQRS.HomeBudget.Domain.Test;
 using CQRS.HomeBudget.ReadModels.Test;
 using EventFlow;
 using EventFlow.Queries;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CQRS.HomeBudget.WebApi.Controllers
 {
@@ -25,8 +24,7 @@ namespace CQRS.HomeBudget.WebApi.Controllers
         public async Task<IActionResult> GetAsync(string testAggregateIdValue)
         {
             var testAggregateId = TestAggregateId.With(testAggregateIdValue);
-            var testAggregate = await _queryProcessor.ProcessAsync(new ReadModelByIdQuery<TestReadModel>(testAggregateId),
-                default(CancellationToken));
+            var testAggregate = await _queryProcessor.ProcessAsync(new ReadModelByIdQuery<TestReadModel>(testAggregateId), default);
 
             return Ok(testAggregate);
         }
@@ -35,7 +33,7 @@ namespace CQRS.HomeBudget.WebApi.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] string testName)
         {
             var testAggregateId = TestAggregateId.New;
-            await _commandBus.PublishAsync(new CreateTest(testAggregateId, testName), default(CancellationToken));
+            await _commandBus.PublishAsync(new CreateTest(testAggregateId, testName), default);
 
             return CreatedAtAction(nameof(GetAsync), new { testAggregateIdValue = testAggregateId.ToString() },
                 new { id = testAggregateId.Value, name = testName });
