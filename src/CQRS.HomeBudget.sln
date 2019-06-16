@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.HomeBudget.WebApi", "CQRS.HomeBudget.WebApi\CQRS.HomeBudget.WebApi.csproj", "{16DDBDA5-4812-4C5C-9CBC-7F3A6DBED889}"
+	ProjectSection(ProjectDependencies) = postProject
+		{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6} = {022037EF-3DAB-4BCD-BD7D-58E0685EF7B6}
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "..\docker-compose.dcproj", "{D5E34B1A-8496-4F37-BB81-C3D1C27B6A8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E99E8B87-97D6-4A21-9BFC-87A568B3DC8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.HomeBudget.Domain", "CQRS.HomeBudget.Domain\CQRS.HomeBudget.Domain.csproj", "{F1A857A7-CF9A-49D2-9172-E7782326A60E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.HomeBudget.CompositionRoot", "CQRS.HomeBudget.CompositionRoot\CQRS.HomeBudget.CompositionRoot.csproj", "{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.HomeBudget.Application", "CQRS.HomeBudget.Application\CQRS.HomeBudget.Application.csproj", "{3728FE35-4069-4BEA-B8B9-00D75E0272D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS.HomeBudget.ReadModels", "CQRS.HomeBudget.ReadModels\CQRS.HomeBudget.ReadModels.csproj", "{AB787161-87DB-4905-9D83-0DEC384F57DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16DDBDA5-4812-4C5C-9CBC-7F3A6DBED889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DDBDA5-4812-4C5C-9CBC-7F3A6DBED889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DDBDA5-4812-4C5C-9CBC-7F3A6DBED889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DDBDA5-4812-4C5C-9CBC-7F3A6DBED889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E34B1A-8496-4F37-BB81-C3D1C27B6A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E34B1A-8496-4F37-BB81-C3D1C27B6A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E34B1A-8496-4F37-BB81-C3D1C27B6A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E34B1A-8496-4F37-BB81-C3D1C27B6A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A857A7-CF9A-49D2-9172-E7782326A60E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A857A7-CF9A-49D2-9172-E7782326A60E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A857A7-CF9A-49D2-9172-E7782326A60E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A857A7-CF9A-49D2-9172-E7782326A60E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3728FE35-4069-4BEA-B8B9-00D75E0272D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3728FE35-4069-4BEA-B8B9-00D75E0272D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3728FE35-4069-4BEA-B8B9-00D75E0272D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3728FE35-4069-4BEA-B8B9-00D75E0272D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB787161-87DB-4905-9D83-0DEC384F57DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB787161-87DB-4905-9D83-0DEC384F57DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB787161-87DB-4905-9D83-0DEC384F57DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB787161-87DB-4905-9D83-0DEC384F57DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16DDBDA5-4812-4C5C-9CBC-7F3A6DBED889} = {E99E8B87-97D6-4A21-9BFC-87A568B3DC8D}
+		{F1A857A7-CF9A-49D2-9172-E7782326A60E} = {E99E8B87-97D6-4A21-9BFC-87A568B3DC8D}
+		{022037EF-3DAB-4BCD-BD7D-58E0685EF7B6} = {E99E8B87-97D6-4A21-9BFC-87A568B3DC8D}
+		{3728FE35-4069-4BEA-B8B9-00D75E0272D6} = {E99E8B87-97D6-4A21-9BFC-87A568B3DC8D}
+		{AB787161-87DB-4905-9D83-0DEC384F57DC} = {E99E8B87-97D6-4A21-9BFC-87A568B3DC8D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D40A642-2452-424D-ABEA-45819515054B}
+	EndGlobalSection
+EndGlobal

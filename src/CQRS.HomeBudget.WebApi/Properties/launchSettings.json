@@ -23,10 +23,6 @@
       },
       "useSSL": true,
       "sslPort": 44375
-    },
-    "Azure Dev Spaces": {
-      "commandName": "AzureDevSpaces",
-      "launchBrowser": true
     }
   }
 }
